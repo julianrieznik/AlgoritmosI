@@ -65,9 +65,33 @@ public class Matriz<E> {
     public Integer cantidadFilas(){
         return matriz.size();
     }
+
     public boolean estaVacia(){
         return matriz.isEmpty();
     }
+
+    public void eliminarFila(int idx){
+        if(idx < cantidadFilas() && idx >= 0){
+        matriz.remove(idx);
+        }
+        else{
+            String indice = String.valueOf(idx);
+            throw new IndexOutOfBoundsException("La fila " + idx + " no existe");
+        }
+    }
+
+    public void eliminarColumna(int idx){
+        if(idx < cantidadColumnas() && idx >= 0){
+            for (List<E> lista : matriz){
+                lista.remove(idx);
+            }
+        }
+        else{
+            String indice = String.valueOf(idx);
+            throw new IndexOutOfBoundsException("La columna " + idx + " no existe");
+        }
+    }
+
 
     @Override
     public String toString() {
@@ -93,12 +117,12 @@ public class Matriz<E> {
         ArrayList<Integer> f2 = new ArrayList<>(Arrays.asList(5, 6, 7, 8));
         ArrayList<Integer> f3 = new ArrayList<>(Arrays.asList(9, 10, 11));
         ArrayList<Integer> col = new ArrayList<>(Arrays.asList(9, 10));
-
+        
         matriz.agregarFila(f1);
         matriz.agregarFila(f2);
         matriz.agregarColumna(col);
         System.out.println(matriz);
-        matriz.agregarFila(f3);
+ 
         
 
     }
