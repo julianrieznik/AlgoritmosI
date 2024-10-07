@@ -15,4 +15,5 @@ public class Pagina {
         this.texto = contenido;
         this.numeroPagina = numero;
     }
+    
 }

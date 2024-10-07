@@ -24,4 +24,9 @@ public class Capitulo {
     public String getTitulo() {
         return titulo;
     }
+
+    public void agregarPagina(Pagina pag){
+        paginas.add(pag);
+    }
+
 }

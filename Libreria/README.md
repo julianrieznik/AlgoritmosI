@@ -7,7 +7,6 @@ libro tiene también un índice de capítulos donde se puede consultar el númer
 página donde comienza. Se desea modelar la siguiente funcionalidad:
 a) Obtener los nombres de capítulos del libro
 b) Obtener la cantidad de páginas totales del libro o de un capítulo
-HASTA ACA HICE
 c) Obtener la página inicial y final de un capítulo
 d) Obtener la cantidad de palabras totales del libro o de un capítulo
 e) Obtener la cantidad de caracteres totales del libro o de un capítulo
