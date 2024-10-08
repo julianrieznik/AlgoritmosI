@@ -29,4 +29,15 @@ public class Capitulo {
         paginas.add(pag);
     }
 
+    public List<Pagina> getPaginas() {
+        return paginas;
+    }
+
+    public int cantidadLetras(){
+        int contador = 0;
+        for (Pagina pag : paginas){
+            contador += pag.getTexto().length();
+        }
+         return contador;
+    }
 }

@@ -12,5 +12,6 @@ d) Obtener la cantidad de palabras totales del libro o de un capítulo
 e) Obtener la cantidad de caracteres totales del libro o de un capítulo
 f) Agregar una referencia en una página particular del libro. La referencia tiene un
 texto identificatorio asociado.
+HASTA ACA HICE
 g) Implementar la capacidad de agregar y eliminar páginas en un capítulo.
 h) Permitir buscar una página específica por número y obtener su contenido
