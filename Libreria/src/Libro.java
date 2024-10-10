@@ -91,6 +91,18 @@ public class Libro {
                 }
             }
         }
+
+        public String textoPagina(int numeroPagina) {
+            for (List<Pagina> paginas : capitulos.values()) {
+                for (Pagina pag : paginas) {
+                    if (pag.getNumeroPagina() == numeroPagina) {
+                        String texto = pag.getTexto(); 
+                        return texto; 
+                    }
+                }
+            }
+            return "Pagina no existe";
+        }
         
     }
 
