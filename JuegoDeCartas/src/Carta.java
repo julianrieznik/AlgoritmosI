@@ -1,6 +1,15 @@
-public class Carta {
+public class Carta implements Comparable<Carta>{
     private int valor;
     private String palo;
+
+
+    public int getValor() {
+        return valor;
+    }
+
+    public String getPalo() {
+        return palo;
+    }
 
     public Carta (int valor, String palo) throws CartaIncorrecta{
         if (valor < 1 || valor > 13){
@@ -31,6 +40,11 @@ public class Carta {
                 break;
         }
         return v + " " + palo;
+    }
+
+    @Override
+    public int compareTo(Carta o) {
+        return this.getValor() - o.getValor();
     }
 
     

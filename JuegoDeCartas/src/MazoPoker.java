@@ -5,16 +5,27 @@ import java.util.List;
 
 public class MazoPoker {
     private List<Carta> mazo;
+    private List<String> ordenPalos;
 
-    public MazoPoker() throws CartaIncorrecta{
+    private void crearMazo() throws CartaIncorrecta {
         mazo = new ArrayList<>();
-        List<String> palos = new ArrayList<>(Arrays.asList("Pica", "Corazón", "Trebol", "Diamante"));
-        for(int i = 1; i < 14; i++){
-            for (String palo : palos){
+        for (int i = 1; i < 14; i++) {
+            for (String palo : ordenPalos) {
                 Carta carta = new Carta(i, palo);
                 mazo.add(carta);
             }
         }
+    }
+
+    public MazoPoker() throws CartaIncorrecta{
+        crearMazo();
+        ordenPalos = new ArrayList<>();
+        }
+    
+
+    public MazoPoker(ArrayList<String> orden) throws CartaIncorrecta{
+        crearMazo();    
+        this.ordenPalos = orden;
     }
 
     public void barajar(){
@@ -35,6 +46,7 @@ public class MazoPoker {
         if (contador % 13 != 0) {
             System.out.println();
         }
+        System.out.println();
     }
 
     public void sacarCartasTop(int x){
@@ -64,13 +76,24 @@ public class MazoPoker {
         mazo.addAll(cartas); 
     }
 
-    public static void main(String[] args) throws CartaIncorrecta {
-        MazoPoker m = new MazoPoker();
-        m.verMazo();
-        m.barajar();
-        m.sacarCartasTop(2);
-        m.sacarCartasBottom(4);
-        m.verMazo();
+    public void ordenar() {
+        if(ordenPalos.isEmpty()){
+        System.out.println("No hay orden de palos definido para ordenar");
+        }
+        else{
+            
+        }
     }
      
+
+    public static void main(String[] args) throws CartaIncorrecta {
+        MazoPoker m = new MazoPoker();
+        m.barajar();
+        m.verMazo();
+        m.ordenar();
+        m.verMazo();
+
+    }
+
+
 }
