@@ -8,9 +8,10 @@ public class MazoPoker {
     private List<String> ordenPalos;
 
     private void crearMazo() throws CartaIncorrecta {
+        List<String> palos = new ArrayList<>(Arrays.asList("Corazones", "Diamantes", "Tréboles", "Picas"));
         mazo = new ArrayList<>();
         for (int i = 1; i < 14; i++) {
-            for (String palo : ordenPalos) {
+            for (String palo : palos) {
                 Carta carta = new Carta(i, palo);
                 mazo.add(carta);
             }
@@ -77,12 +78,7 @@ public class MazoPoker {
     }
 
     public void ordenar() {
-        if(ordenPalos.isEmpty()){
-        System.out.println("No hay orden de palos definido para ordenar");
-        }
-        else{
-            
-        }
+        Collections.sort(mazo);
     }
      
 
