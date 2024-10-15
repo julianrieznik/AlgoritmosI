@@ -8,7 +8,7 @@ public class MazoPoker {
     private List<String> ordenPalos;
 
     private void crearMazo() throws CartaIncorrecta {
-        List<String> palos = new ArrayList<>(Arrays.asList("Corazones", "Diamantes", "Tréboles", "Picas"));
+        List<String> palos = new ArrayList<>(Arrays.asList("Corazones", "Diamantes", "Treboles", "Picas"));
         mazo = new ArrayList<>();
         for (int i = 1; i < 14; i++) {
             for (String palo : palos) {
@@ -20,7 +20,7 @@ public class MazoPoker {
 
     public MazoPoker() throws CartaIncorrecta{
         crearMazo();
-        ordenPalos = new ArrayList<>();
+        this.ordenPalos = new ArrayList<>(Arrays.asList("Treboles", "Corazones", "Picas", "Diamantes"));
         }
     
 
@@ -78,7 +78,19 @@ public class MazoPoker {
     }
 
     public void ordenar() {
-        Collections.sort(mazo);
+        Collections.sort(mazo, (carta1, carta2) -> {
+            // Compara los palos según el orden en 'ordenPalos'
+            int indicePalo1 = ordenPalos.indexOf(carta1.getPalo());
+            int indicePalo2 = ordenPalos.indexOf(carta2.getPalo());
+    
+            if (indicePalo1 != indicePalo2) {
+                // Si los palos son diferentes, los compara por el índice en ordenPalos
+                return Integer.compare(indicePalo1, indicePalo2);
+            } else {
+                // Si los palos son iguales, compara los valores de las cartas
+                return Integer.compare(carta1.getValor(), carta2.getValor());
+            }
+        });
     }
      
 
@@ -90,6 +102,4 @@ public class MazoPoker {
         m.verMazo();
 
     }
-
-
 }

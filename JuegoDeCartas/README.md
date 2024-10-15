@@ -8,6 +8,5 @@ Definir la clase MazoPoker que modele un mazo de cartas de Poker. El mazo contie
  Sacar X cartas de abajo
  Colocar X cartas arriba
  Colocar X cartas abajo
- HASTA ACA HICE
  Ordenar el mazo según orden de palos solicitado (en cada palo se ordena del 1
  al 10, J, Q, K)
