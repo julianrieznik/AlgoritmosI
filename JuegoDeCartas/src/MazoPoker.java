@@ -50,20 +50,28 @@ public class MazoPoker {
         System.out.println();
     }
 
-    public void sacarCartasTop(int x){
+    public List<Carta> sacarCartasTop(int x){
+        List<Carta> cartas = new ArrayList<>();
         for (int i = 0; i < x; i++){
             int idx = 0;
+            Carta carta = mazo.get(idx);
+            cartas.add(carta);
             System.out.println("Se repartio de top: " + mazo.get(idx));
             mazo.removeFirst();
         }
+        return cartas;
     }
 
-    public void sacarCartasBottom(int x){
+    public List<Carta> sacarCartasBottom(int x){
+        List<Carta> cartas = new ArrayList<>();
         for (int i = 0; i < x; i++){
             int idx = mazo.size() - 1;
-            System.out.println("Se repartio de top: " + mazo.get(idx));
+            Carta carta = mazo.get(idx);
+            cartas.add(carta);
+            System.out.println("Se repartio de Bottom: " + mazo.get(idx));
             mazo.removeLast();
         }
+        return cartas;
     }
 
     public void colocarCartasTop(List<Carta> cartas) {
